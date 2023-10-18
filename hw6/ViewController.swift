@@ -25,17 +25,18 @@ class ViewController: UIViewController {
         
         //2
         
-        let less = result.filter({$0 <= 5})
+        let less = string.filter({$0.count <= 5})
     
         
         //3
         
 
-        let more = result.filter({$0 >= 5})
+        let more = string.filter({$0.count >= 10})
+        print (more)
       
 
         //4
-        func getMyString (_ array: [Int], _ closure: (Int, Int?) -> Bool) -> Int {
+        func getstring (_ array: [Int], _ closure: (Int, Int?) -> Bool) -> Int {
             var optValue: Int? = nil
             for value in result {
                 if closure(value, optValue) {
@@ -48,24 +49,25 @@ class ViewController: UIViewController {
         print("max: \(result.reduce(result[0]){$0 < $1 ? $1 : $0})")
 
         //5
-        extension Collection where Iterator.Element == String {
-            func resultSort() -> [String] {
-                return.self.sorted {$0.count > $1.count}
-            }
-        }
-        
-        string.stringSort()
+        string.sort(by:>)
+        print(string)
         
         //6
-        print (string.trimmingCharacters(in: .whitespaces))
+        print (string [0].trimmingCharacters(in: .whitespaces))
+        print (string [1].trimmingCharacters(in: .whitespaces))
+        print (string [2].trimmingCharacters(in: .whitespaces))
+        print (string [3].trimmingCharacters(in: .whitespaces))
+        print (string [4].trimmingCharacters(in: .whitespaces))
+        print (string [5].trimmingCharacters(in: .whitespaces))
+        print (string [6].trimmingCharacters(in: .whitespaces))
     }
 
 
 }
 
 
-    }
 
 
-}
+
+
 
