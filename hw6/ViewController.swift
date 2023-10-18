@@ -21,22 +21,22 @@ class ViewController: UIViewController {
         let result = string.map {$0.count}
         let sum = result.reduce(0, +)
         print(sum)
-     
+        
         
         //2
         
         let less = string.filter({$0.count <= 5})
-    
+        
         
         //3
         
-
+        
         let more = string.filter({$0.count >= 10})
         print (more)
-      
-
+        
+        
         //4
-        func getstring (_ array: [Int], _ closure: (Int, Int?) -> Bool) -> Int {
+        func result (_ array: [Int], _ closure: (Int, Int?) -> Bool) -> Int {
             var optValue: Int? = nil
             for value in result {
                 if closure(value, optValue) {
@@ -45,12 +45,12 @@ class ViewController: UIViewController {
             }
             return optValue!
         }
-
+        
         print("max: \(result.reduce(result[0]){$0 < $1 ? $1 : $0})")
-
+        
         //5
-        string.sort(by:>)
-        print(string)
+        let sortstring = string.sorted() {$0.count > $1.count}
+        
         
         //6
         print (string [0].trimmingCharacters(in: .whitespaces))
@@ -60,6 +60,12 @@ class ViewController: UIViewController {
         print (string [4].trimmingCharacters(in: .whitespaces))
         print (string [5].trimmingCharacters(in: .whitespaces))
         print (string [6].trimmingCharacters(in: .whitespaces))
+        
+        let result1 = string.map {
+            String(Array($0.replacingOccurrences(of: " ", with: "")))
+                .lowercased()
+        
+        }
     }
 
 
