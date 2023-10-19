@@ -36,20 +36,14 @@ class ViewController: UIViewController {
         
         
         //4
-        func result (_ array: [Int], _ closure: (Int, Int?) -> Bool) -> Int {
-            var optValue: Int? = nil
-            for value in result {
-                if closure(value, optValue) {
-                    optValue = value
-                }
-            }
-            return optValue!
-        }
         
-        print("max: \(result.reduce(result[0]){$0 < $1 ? $1 : $0})")
+        if let max = string.max() {
+            print("Максимальное значение в массие:", max)
+        }
+            
         
         //5
-        let sortstring = string.sorted() {$0.count > $1.count}
+        let sortstring = string.sorted {$0.count > $1.count}
         
         
         //6
@@ -62,8 +56,7 @@ class ViewController: UIViewController {
         print (string [6].trimmingCharacters(in: .whitespaces))
         
         let result1 = string.map {
-            String(Array($0.replacingOccurrences(of: " ", with: "")))
-                .lowercased()
+            String($0.replacingOccurrences(of: " ", with: ""))
         
         }
     }
